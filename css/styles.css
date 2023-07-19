@@ -1,0 +1,264 @@
+body{
+    font-family: sans-serif;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0%;
+    background-color: #000000;
+    color: white;
+}
+
+header{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    background-color: rgb(102, 0, 0);
+    padding-left: 1%;
+}
+
+header h6{
+    margin-left: 0.2%;
+}
+
+header div{
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    right: 3%;
+    bottom: 0%;
+}
+
+header i:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+header h3:hover{
+    transform: scale(1.2);
+    cursor:default;
+}
+
+/*************************** main ***************************/
+
+main{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.contenido{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.artist-profile{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.artist-profile ul{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 4% 0% 2%;
+}
+
+.artist-profile ul li{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.artist-profile ul li img{
+    border-radius: 360px;
+}
+
+.artist-profile ul li img:hover{
+    cursor: pointer;
+}
+
+/***************************** videos *******************************/
+
+.videos{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.videos ul{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.videos ul li{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.videos ul li button{
+    align-self: center;
+    height: 205px;
+    width: 55px;
+    border-radius: 7px;
+    color: white;
+    background-color: rgb(178, 0, 178);
+    position: relative;
+    left: 6%;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.videos ul li button:hover{
+    transform: scale(1.05);
+}
+
+@keyframes contadorStar{
+    25%{transform: translateY(-20px);}
+}
+
+.contador-star{
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    right: 4%;
+    bottom: 5%;
+    align-items: center;
+    justify-content: center;
+    animation: contadorStar 3s infinite;
+}
+
+.contador-star h2{
+    position: absolute;
+    font-size: 35px;
+    font-weight: 800;
+    z-index: 1;
+}
+
+.contador-star img{
+    width: 100px;
+}
+
+@keyframes pulso{
+    0%{transform: scale(1.5)}
+    100%{transform: scale(1)}
+}
+
+.transition{
+    animation: pulso 1.5s 1;
+}
+
+.opacity{
+    opacity: 40%;
+    cursor: default;
+    transform: none;
+    transition: none;
+}
+
+
+/****************************** votos ******************************/
+
+.ranking{
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 4%;
+    margin-right: 4%;
+    border-radius: 0px 10px;
+    background-color: rgb(8, 0, 40);
+    flex-direction: column;
+    align-items: center;
+}
+
+.ranking h2{
+    margin-bottom: 0%;
+}
+
+.ranking ul{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-left: 0.5%;
+    background-color: rgb(223, 175, 1);
+    border-radius: 0px 10px;
+}
+
+.ranking li{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    list-style-type: none;
+    padding-right: 1%;
+    position: relative;
+    margin-top: 5%;
+}
+
+.ranking img{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 30px 360px 360px 30px;
+    margin-bottom: -7.5%;
+}
+
+.ranking a{
+    color: #000000;
+    align-self: center;
+    text-decoration: underline;
+    padding-top: 10%;
+}
+
+.ranking h3{
+    align-self: flex-end;
+    position: absolute;
+    bottom: -10px;
+    color: #000000;
+    font-size: xx-large;
+}
+
+
+/****************************** clases ******************************/
+
+.tema-sitio{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.tema-sitio .ranking h2{
+    color: #ffffff;
+}
+
+.inactivo{
+    background-color: white;
+}
+
+/***************************** footer *******************************/
+
+footer{
+    display: flex;
+    box-sizing: border-box;
+    background-color: rgb(8, 0, 40);
+    margin-top: 0%;
+}
+
+footer h6{
+    margin: 0%;
+}
