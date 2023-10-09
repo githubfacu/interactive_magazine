@@ -6,7 +6,7 @@ const artists = [{
 },
 {
     name : 'Telula',
-    img : 'https://yt3.googleusercontent.com/zHExB9pDxBoqiblCHABHS1mw1dKMMT98OdpLCwJITru5CAyC73W81QG8a73OB-XnWiO_qV6wJU8=s176-c-k-c0x00ffffff-no-rj-mo',
+    img : 'https://yt3.googleusercontent.com/uuxM7r7qkQ1IPToQQu6SiLEPUAOOgKPivlYD_uNAPMwjrPGYhWaxyMaacgUIwHJEwGaBwD2Kzw=s176-c-k-c0x00ffffff-no-rj',
     username : '@telula',
     link : 'youtube.com/@telula'
 },
