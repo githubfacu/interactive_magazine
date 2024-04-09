@@ -6,7 +6,7 @@ const artists = [{
 },
 {
     name : 'Telula',
-    img : 'https://yt3.googleusercontent.com/uuxM7r7qkQ1IPToQQu6SiLEPUAOOgKPivlYD_uNAPMwjrPGYhWaxyMaacgUIwHJEwGaBwD2Kzw=s176-c-k-c0x00ffffff-no-rj',
+    img : 'https://yt3.googleusercontent.com/_T3ABTwbrxBBBvjNfuKzb1uGgVss7QjyiPJNy2obksE8cdbvaPIe5KSKXTIkh0sXJyVsY0bqATY=s176-c-k-c0x00ffffff-no-rj',
     username : '@telula',
     link : 'youtube.com/@telula'
 },
@@ -30,7 +30,7 @@ const artists = [{
 },
 {
     name : 'Luna Di',
-    img : 'https://yt3.googleusercontent.com/cZj8OstzBQV2FgL6GYFHf0odVVNSJQA2UyNptfPPofzNFCBQNhCIztm1rWuJwVOmsHYu54-s=s176-c-k-c0x00ffffff-no-rj',
+    img : 'https://yt3.googleusercontent.com/tIaT5ZOdDX89ER-Nack8Db6GBpb-9j1utTUJzmZDC9P6Wj0JCgFDTQyrMtoq12tAvOo9X1ys=s176-c-k-c0x00ffffff-no-rj',
     username : '@lunadimusic',
     link : 'youtube.com/@lunadimusic'
 }
