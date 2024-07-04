@@ -30,7 +30,7 @@ const artists = [{
 },
 {
     name : 'Luna Di',
-    img : 'https://yt3.googleusercontent.com/tIaT5ZOdDX89ER-Nack8Db6GBpb-9j1utTUJzmZDC9P6Wj0JCgFDTQyrMtoq12tAvOo9X1ys=s176-c-k-c0x00ffffff-no-rj',
+    img : 'https://yt3.googleusercontent.com/_Ft5zkl7x4SJJvAqGLBYETn5OkXHpMdbCQ4wXoV2wXSAj_Hq8NjMpTVqz9vIacARkZwP0vzr=s160-c-k-c0x00ffffff-no-rj',
     username : '@lunadimusic',
     link : 'youtube.com/@lunadimusic'
 }
