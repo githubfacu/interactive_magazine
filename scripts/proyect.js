@@ -1,7 +1,7 @@
 const artists = [{
     name : 'Damian Salazar',
     img : 'https://yt3.googleusercontent.com/ytc/AOPolaQJ4LU9gncSi3onOzb83G2QyWpCzxlgWiz_AgGvMA=s176-c-k-c0x00ffffff-no-rj',
-    username : '@DamianSalazarOficial',
+    username : '@DamianSalazar',
     link : 'youtube.com/@DamianSalazarOficial'
 },
 {
@@ -25,13 +25,13 @@ const artists = [{
 {
     name : 'Justin Johnson',
     img : 'https://yt3.googleusercontent.com/yMDWU7bbyG3qG9qI8BarA2wsdFFqTchK3VUqqsD4IH_h_YDfGQ4VMOMGbBb0DBOdx74t9If6jPQ=s160-c-k-c0x00ffffff-no-rj',
-    username : '@justinjohnsonlive',
+    username : '@justinjohnson',
     link : 'youtube.com/@justinjohnsonlive'
 },
 {
     name : 'Mateo Mancuso',
     img : 'https://yt3.googleusercontent.com/ytc/AOPolaTBdgi_VOCnE_iDQqbQqa-tMUBYuu2vk1z3kO2uww=s176-c-k-c0x00ffffff-no-rj-mo',
-    username : '@MatteoMancusoofficial',
+    username : '@MatteoMancuso',
     link : 'youtube.com/@MatteoMancusoofficial'
 },
 {
@@ -76,9 +76,10 @@ window.addEventListener('load', function(){
     swal.fire({
         title: 'You want to exit?',
         icon: 'question',
+        iconColor: '#707070',
         confirmButtonColor: '#00008e',
         confirmButtonText: 'Yes!',
-        background: '#df01df94',
+        background: 'rgba(223, 175, 1,.8)',
         color: '#00008e'
       }).then((result) => {
         if (result.isConfirmed) {

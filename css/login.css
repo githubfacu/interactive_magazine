@@ -13,7 +13,7 @@ body{
     width: 400px;
     justify-content: center;
     margin-top: 5%;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 form{
@@ -22,6 +22,7 @@ form{
     flex-direction: column;
     width: 100%;
     padding: 5%;
+    color: rgb(223, 175, 1);
 }
 
 .form-header{
@@ -31,14 +32,29 @@ form{
     align-items: center;
 }
 
-.form-header h2{
+.form-header h1{
     text-align: center;
 }
 
-.form-header p{
+.form-header h2{
     align-self: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+label{
+    margin-bottom: 2px;
 }
 
 input{
     width: 50%;
+}
+
+.container button{
+    background-color: rgb(223, 175, 1);
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: rgba(223, 175, 1,.9);
 }

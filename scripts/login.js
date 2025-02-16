@@ -17,6 +17,9 @@ window.addEventListener('load', function(){
         if(user.username.length>1 && !user.username.includes(' ') && user.username.length<15){
             navegarPagina()            
         }
+        else{
+            alert('between 2 and 15 characters')
+        }
     })
 
     function capturarDatos(){
