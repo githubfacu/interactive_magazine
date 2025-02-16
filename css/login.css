@@ -2,14 +2,14 @@ body{
     display: flex;
     box-sizing: border-box;
     justify-content: center;
-    background-color: rgb(102, 0, 0);
+    background-color: #060606;
     color: #ffffff;
 }
 
 .container{
     display: flex;
     box-sizing: border-box;
-    background-color: rgb(8, 0, 40);
+    background-color: rgba(102, 0, 0, .6);
     width: 400px;
     justify-content: center;
     margin-top: 5%;

@@ -5,6 +5,12 @@ const artists = [{
     link : 'youtube.com/@DamianSalazarOficial'
 },
 {
+    name : 'Max Ostro',
+    img : 'https://yt3.googleusercontent.com/eA8JPD9uPwe1sag8aLTDDPZdq9z9flwktUkFiBU3XnofoVSsH1wzy9QB1YgQZJtIhddWqFT-1Q=s160-c-k-c0x00ffffff-no-rj',
+    username : '@MaxOstro',
+    link : 'youtube.com/@MaxOstro/featured'
+},
+{
     name : 'Telula',
     img : 'https://yt3.googleusercontent.com/_T3ABTwbrxBBBvjNfuKzb1uGgVss7QjyiPJNy2obksE8cdbvaPIe5KSKXTIkh0sXJyVsY0bqATY=s176-c-k-c0x00ffffff-no-rj',
     username : '@telula',
@@ -18,7 +24,7 @@ const artists = [{
 },
 {
     name : 'Justin Johnson',
-    img : 'https://yt3.googleusercontent.com/UrpAs_Xlbb-AX4FJStr1JaIGeiKIdTGir9aLuHunnZyYqDeuLd2LevIWWrqUcRIT9A9oRTGOLw=s176-c-k-c0x00ffffff-no-rj',
+    img : 'https://yt3.googleusercontent.com/yMDWU7bbyG3qG9qI8BarA2wsdFFqTchK3VUqqsD4IH_h_YDfGQ4VMOMGbBb0DBOdx74t9If6jPQ=s160-c-k-c0x00ffffff-no-rj',
     username : '@justinjohnsonlive',
     link : 'youtube.com/@justinjohnsonlive'
 },
@@ -59,7 +65,6 @@ window.addEventListener('load', function(){
     const pulsosStorage = pulsosDataStorage()
 
     recuperarPulsos(pulsos, pulsosStorage)
-    localStorage.clear()
     recuperarRank(pulsos, rankTable)
 
     const contadorStarPulsos = document.querySelector('.contador-star h2')
@@ -116,6 +121,7 @@ function recuperarPulsos(pulsosArray,data){
         pulsosArray.push(0)
         pulsosArray.push(0)
         pulsosArray.push(0)
+        pulsosArray.push(0)
     }
 }
 
@@ -127,6 +133,7 @@ function recuperarRank(pulsosArray, rankTable){
     rankTable[3].innerText = (pulsosArray[3])
     rankTable[4].innerText = (pulsosArray[4])
     rankTable[5].innerText = (pulsosArray[5])
+    rankTable[6].innerText = (pulsosArray[6])
 }
 
 
@@ -155,6 +162,8 @@ const videosUl = document.querySelector('.videos ul')
 
 videosUl.innerHTML+=`<li><iframe width="354" height="630" src="https://www.youtube.com/embed/aM270xHyPMc" title="Queen Bohemian Rhapsody - Amazing Version by Damian Salazar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <button id='damianS'>P\nU\nL\nS\nE</button></li>
+<li><iframe width="354" height="630" src="https://www.youtube.com/embed/h_6muWnHVKY" title="Send this to your fellow guitarists. Am here from now on. 100k likes &amp; I play this piano #guitarsolo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button id='max'>P\nU\nL\nS\nE</button></li>
 <li><iframe width="354" height="630" src="https://www.youtube.com/embed/Bkce6lrCafU" title="🌷 DOES IT GET ANY TIGHTER?!?! 🌷”Patrol Acrobatique” by Vulfpeck #funkmusic  #musician #bassguitar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <button id='telula'>P\nU\nL\nS\nE</button></li>
 <li><iframe width="354" height="630" src="https://www.youtube.com/embed/E6PoIv0d1nc" title="#livingonaprayer #bonjovi #9yearold #drummer #alexshumaker #alexshudrums #drums" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -262,6 +271,7 @@ listadoRanking(artists)
 
 
 const damianSbutton = document.getElementById('damianS')
+const maxbutton = document.getElementById('max')
 const telulabutton = document.getElementById('telula')
 const alexSbutton = document.getElementById('alexS')
 const justinJbutton = document.getElementById('justinJ')
@@ -269,6 +279,7 @@ const mateoMbutton = document.getElementById('mateoM')
 const lunaDibutton = document.getElementById('lunaDi')
 
 const damianSpulses = document.getElementById('@DamianSalazarOficial')
+const maxpulses = document.getElementById('@MaxOstro')
 const telulapulses = document.getElementById('@telula')
 const alexSpulses = document.getElementById('@alexshudrums')
 const justinJpulses = document.getElementById('@justinjohnsonlive')
@@ -284,6 +295,7 @@ function sumarPulsos(boton, casillero){
 }
 
 sumarPulsos(lunaDibutton,lunaDipulses)
+sumarPulsos(maxbutton,maxpulses)
 sumarPulsos(damianSbutton,damianSpulses)
 sumarPulsos(alexSbutton,alexSpulses)
 sumarPulsos(justinJbutton,justinJpulses)
@@ -294,6 +306,7 @@ sumarPulsos(telulabutton,telulapulses)
 function pulsosPush(){
     pulsos = []
     pulsos.push(damianSpulses.innerText)
+    pulsos.push(maxpulses.innerText)
     pulsos.push(telulapulses.innerText)
     pulsos.push(alexSpulses.innerText)
     pulsos.push(justinJpulses.innerText)
