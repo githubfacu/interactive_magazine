@@ -30,7 +30,7 @@ header div{
 }
 
 header i{
-    transition: transform .3s ease;
+    transition: transform .25s ease;
 }
 
 header i:hover{
@@ -134,6 +134,7 @@ main{
     font-size: 30px;
     border: none;
     cursor: pointer;
+    transition: transform .07s ease-in-out;
 }
 
 .videos ul li button:hover{
