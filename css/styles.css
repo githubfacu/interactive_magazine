@@ -1,6 +1,6 @@
 body{
     font-family: sans-serif;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     margin: 0%;
     background-color: #060606;
@@ -8,13 +8,13 @@ body{
 }
 
 header{
+    width: 100%;
     display: flex;
     box-sizing: border-box;
     position: relative;
     background-color: rgba(102, 0, 0, .6);
-    padding-left: 1%;
+    padding: 8px 16px;
     color: rgb(223, 175, 1);
-
 }
 
 header h6{
@@ -24,18 +24,18 @@ header h6{
 header div{
     display: flex;
     box-sizing: border-box;
-    position: absolute;
-    right: 3%;
-    bottom: 0%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    gap: 8px;
 }
 
-header i{
-    transition: transform .25s ease;
+.fa-star-half-stroke{
+    transition: transform .2s ease;
 }
 
-header i:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.fa-star-half-stroke:hover{
+    transform: scale(1.05);
 }
 
 header h3{
@@ -45,6 +45,7 @@ header h3{
 /*************************** main ***************************/
 
 main{
+    width: 100%;
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
@@ -134,11 +135,10 @@ main{
     font-size: 30px;
     border: none;
     cursor: pointer;
-    transition: transform .07s ease-in-out;
 }
 
 .videos ul li button:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 @keyframes contadorStar{
@@ -270,7 +270,8 @@ footer{
 }
 
 footer h6{
-    margin: 0%;
+    margin: 0;
+    padding-left: 8px;
+    font-size: 13px;
     color: rgb(223, 175, 1);
-
 }
