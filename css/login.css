@@ -4,16 +4,17 @@ body{
     justify-content: center;
     background-color: #060606;
     color: #ffffff;
+    background-image: url('../img/lunaDi.jpg');
 }
 
 .container{
     display: flex;
     box-sizing: border-box;
-    background-color: rgba(102, 0, 0, .6);
+    background-color: rgba(223, 175, 1, .6);
     width: 400px;
     justify-content: center;
     margin-top: 5%;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 form{
@@ -22,7 +23,7 @@ form{
     flex-direction: column;
     width: 100%;
     padding: 5%;
-    color: rgb(223, 175, 1);
+    color: black;
 }
 
 .form-header{
@@ -48,11 +49,13 @@ label{
 
 input{
     width: 50%;
+    padding: 8px;
 }
 
 .container button{
     background-color: rgb(223, 175, 1);
     cursor: pointer;
+    padding: 8px;
 }
 
 .container button:hover{

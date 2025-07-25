@@ -76,11 +76,11 @@ window.addEventListener('load', function(){
     swal.fire({
         title: 'You want to exit?',
         icon: 'question',
-        iconColor: '#707070',
+        iconColor: '#484848',
         confirmButtonColor: '#00008e',
         confirmButtonText: 'Yes!',
-        background: 'rgba(223, 175, 1,.8)',
-        color: '#00008e'
+        background: 'rgba(223, 175, 1,.6)',
+        color: 'black',
       }).then((result) => {
         if (result.isConfirmed) {
         sessionStorage.clear()
