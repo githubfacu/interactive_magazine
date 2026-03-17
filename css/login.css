@@ -1,20 +1,45 @@
 body{
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    background-color: #060606;
-    color: #ffffff;
-    background-image: url('../img/lunaDi.jpg');
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:#060606;
+    color:white;
+    position:relative;
+    overflow:hidden;
 }
+
+.bg-grid{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 220px;
+    overflow:hidden;
+}
+
+.bg-grid div{
+    background-size:cover;
+    background-position:center;
+}
+
+.bg-grid div:nth-child(6n+1){ background-image:url('../img/alexS.jpg'); }
+.bg-grid div:nth-child(6n+2){ background-image:url('../img/damianS.jpg'); }
+.bg-grid div:nth-child(6n+3){ background-image:url('../img/justinJ.jpg'); }
+.bg-grid div:nth-child(6n+4){ background-image:url('../img/lunaDi.jpg'); }
+.bg-grid div:nth-child(6n+5){ background-image:url('../img/mateoM.jpg'); }
+.bg-grid div:nth-child(6n+6){ background-image:url('../img/telula.jpg'); }
+
 
 .container{
     display: flex;
     box-sizing: border-box;
-    background-color: rgba(223, 175, 1, .6);
+    background-color: rgba(223, 175, 1, .8);
     width: 400px;
-    justify-content: center;
-    margin-top: 5%;
-    border-radius: 6px;
+    border-radius: 4px;
+    margin-top: 120px;
 }
 
 form{
@@ -22,8 +47,9 @@ form{
     box-sizing: border-box;
     flex-direction: column;
     width: 100%;
-    padding: 5%;
+    padding: 1.5rem;
     color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form-header{
@@ -34,7 +60,10 @@ form{
 }
 
 .form-header h1{
+    margin: 0;
+    margin-bottom: 1rem;
     text-align: center;
+    font-size: 1.6rem;
 }
 
 .form-header h2{
@@ -44,20 +73,32 @@ form{
 }
 
 label{
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 input{
     width: 50%;
     padding: 8px;
+    border-radius: 4px;
 }
 
 .container button{
     background-color: rgb(223, 175, 1);
     cursor: pointer;
     padding: 8px;
+    border-radius: 4px;
 }
 
 .container button:hover{
-    background-color: rgba(223, 175, 1,.9);
+    background-color: rgb(240, 188, 0);
+}
+
+@media (min-width: 960px){
+
+    .bg-grid{
+        top: 3rem;
+        bottom: 3rem;
+        left: 3rem;
+        right: 3rem;
+    }
 }
