@@ -79,7 +79,7 @@ window.addEventListener('load', function () {
 
   setRank(pulsos, rankTable)
 
-  let contadorPulsos = JSON.parse(sessionStorage.getItem('contador')) ?? 3
+  let contadorPulsos = JSON.parse(sessionStorage.getItem('contador-pulsos')) ?? 3
 
   const contadorStarPulsos = document.querySelector('.contador-star h2')
   const pulseButtons = document.querySelectorAll('.videos button')
@@ -96,7 +96,7 @@ function getUserData() {
 
 function getRankData() {
   const listaPulsos = []
-  const dataJSON = localStorage.getItem('pulsos')
+  const dataJSON = localStorage.getItem('pulsos-rank')
   if (dataJSON !== null) {
     JSON.parse(dataJSON).forEach(pulso => listaPulsos.push(pulso))
   } else {
@@ -162,9 +162,9 @@ function descontarPulsos(starPulso, buttons, contadorPulsos) {
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       pulsosPush()
-      localStorage.setItem('pulsos', JSON.stringify(pulsos))
+      localStorage.setItem('pulsos-rank', JSON.stringify(pulsos))
       contadorPulsos--
-      sessionStorage.setItem('contador', JSON.stringify(contadorPulsos))
+      sessionStorage.setItem('contador-pulsos', JSON.stringify(contadorPulsos))
 
       if (contadorPulsos > 0) {
         starPulso.innerText = contadorPulsos
