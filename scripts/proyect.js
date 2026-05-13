@@ -30,12 +30,6 @@ const artists = [
     link: 'youtube.com/@justinjohnsonlive'
   },
   {
-    name: 'Mateo Mancuso',
-    img: 'https://yt3.googleusercontent.com/ytc/AOPolaTBdgi_VOCnE_iDQqbQqa-tMUBYuu2vk1z3kO2uww=s176-c-k-c0x00ffffff-no-rj-mo',
-    username: '@MatteoMancusoofficial',
-    link: 'youtube.com/@MatteoMancusoofficial'
-  },
-  {
     name: 'Luna Di',
     img: 'https://yt3.googleusercontent.com/O65wpNLzQELxzUxXK8vQaz6GPFirFzinQtceT4_a27nnbgtlvAlc_XoKlTrwyqKn_S5hJ1-VD_U=s160-c-k-c0x00ffffff-no-rj',
     username: '@lunadimusic',
@@ -43,51 +37,16 @@ const artists = [
   }
 ]
 
-let pulsos = []
-
-function chequearUsuarioValido() {
+window.addEventListener('load', function () {
   const usuario = JSON.parse(sessionStorage.getItem('user'))
   if (usuario === null) {
     location.replace('./')
   }
-}
-
-window.addEventListener('load', function () {
-  chequearUsuarioValido()
-
+  
   const nombreUsuario = document.getElementById('user-name')
-  const user = recuperarDataStorage()
+  const user = getUserData()
   nombreUsuario.innerText = user.username
-
-  // Perfiles
-  mostrarPerfiles(artists)
-
-  // Videos
-  renderVideos()
-
-  // Ranking
-  listadoRanking(artists)
-
-    const starContainer = document.createElement('div')
-    starContainer.classList.add('contador-star')
-    starContainer.innerHTML = `<h2>3</h2><img src="./img/star-pink-krita.png">`
-    document.body.appendChild(starContainer)
-
-  // Inicializar después de insertar contenido
-  inicializarBotones()
-
-  // Pulsos
-  const rankTable = document.querySelectorAll('.ranking h3')
-  const pulsosStorage = pulsosDataStorage()
-
-  recuperarPulsos(pulsos, pulsosStorage)
-  recuperarRank(pulsos, rankTable)
-
-  const contadorStarPulsos = document.querySelector('.contador-star h2')
-  const pulseButtons = document.querySelectorAll('.videos button')
-
-  descontarPulsos(contadorStarPulsos, pulseButtons)
-
+  
   nombreUsuario.addEventListener('click', function () {
     swal.fire({
       title: 'You want to exit?',
@@ -104,29 +63,49 @@ window.addEventListener('load', function () {
       }
     })
   })
+  
+  mostrarPerfiles(artists)
+  renderVideos()
+  listadoRanking(artists)
+  inicializarBotones()
+  
+  const starContainer = document.createElement('div')
+  starContainer.classList.add('contador-star')
+  starContainer.innerHTML = `<h2>3</h2><img src="./img/star-pink-krita.png">`
+  document.body.appendChild(starContainer)
+  
+  const rankTable = document.querySelectorAll('.ranking h3')
+  let pulsos = getRankData()
+
+  setRank(pulsos, rankTable)
+
+  let contadorPulsos = JSON.parse(sessionStorage.getItem('contador')) ?? 3
+
+  const contadorStarPulsos = document.querySelector('.contador-star h2')
+  const pulseButtons = document.querySelectorAll('.videos button')
+
+  descontarPulsos(contadorStarPulsos, pulseButtons, contadorPulsos)
 
   cambiarTema()
 })
 
-function recuperarDataStorage() {
+function getUserData() {
   const dataJSON = sessionStorage.getItem('user')
   return JSON.parse(dataJSON)
 }
 
-function pulsosDataStorage() {
+function getRankData() {
+  const listaPulsos = []
   const dataJSON = localStorage.getItem('pulsos')
-  return JSON.parse(dataJSON)
-}
-
-function recuperarPulsos(pulsosArray, data) {
-  if (data !== null) {
-    data.forEach(pulso => pulsosArray.push(pulso))
+  if (dataJSON !== null) {
+    JSON.parse(dataJSON).forEach(pulso => listaPulsos.push(pulso))
   } else {
-    for (let i = 0; i < 7; i++) pulsosArray.push(0)
+    for (let i = 0; i < artists.length; i++) listaPulsos.push(0)
   }
+  return listaPulsos
 }
 
-function recuperarRank(pulsosArray, rankTable) {
+function setRank(pulsosArray, rankTable) {
   pulsosArray.forEach((p, i) => rankTable[i].innerText = p)
 }
 
@@ -153,7 +132,6 @@ function renderVideos() {
     <li><iframe width="354" height="630" src="https://www.youtube.com/embed/Bkce6lrCafU" frameborder="0"></iframe><button id='telula'>P\nU\nL\nS\nE</button></li>
     <li><iframe width="354" height="630" src="https://www.youtube.com/embed/E6PoIv0d1nc" frameborder="0"></iframe><button id='alexS'>P\nU\nL\nS\nE</button></li>
     <li><iframe width="354" height="630" src="https://www.youtube.com/embed/yrkBZNbm_Lk" frameborder="0"></iframe><button id='justinJ'>P\nU\nL\nS\nE</button></li>
-    <li><iframe width="354" height="630" src="https://www.youtube.com/embed/ongw9Otg4fQ" frameborder="0"></iframe><button id='mateoM'>P\nU\nL\nS\nE</button></li>
     <li><iframe width="354" height="630" src="https://www.youtube.com/embed/F-3quTy1Sj4" frameborder="0"></iframe><button id='lunaDi'>P\nU\nL\nS\nE</button></li>
   `
 }
@@ -165,9 +143,9 @@ function listadoRanking(lista) {
   })
 }
 
-function descontarPulsos(starPulso, buttons) {
+function descontarPulsos(starPulso, buttons, contadorPulsos) {
   const star = document.querySelector('.contador-star')
-  let contador = pulsosRestantes() ?? 3
+  let contador = contadorPulsos
   starPulso.innerText = contador
 
   if (contador === 0) {
@@ -185,11 +163,11 @@ function descontarPulsos(starPulso, buttons) {
     button.addEventListener('click', () => {
       pulsosPush()
       localStorage.setItem('pulsos', JSON.stringify(pulsos))
-      contador--
-      sessionStorage.setItem('contador', JSON.stringify(contador))
+      contadorPulsos--
+      sessionStorage.setItem('contador', JSON.stringify(contadorPulsos))
 
-      if (contador > 0) {
-        starPulso.innerText = contador
+      if (contadorPulsos > 0) {
+        starPulso.innerText = contadorPulsos
         star.classList.add('transition')
         setTimeout(() => star.classList.remove('transition'), 1300)
       } else {
@@ -212,10 +190,6 @@ function descontarPulsos(starPulso, buttons) {
   })
 }
 
-function pulsosRestantes() {
-  return JSON.parse(sessionStorage.getItem('contador'))
-}
-
 function pulsosPush() {
   pulsos = [
     document.getElementById('@DamianSalazarOficial')?.innerText ?? '0',
@@ -223,7 +197,6 @@ function pulsosPush() {
     document.getElementById('@telula')?.innerText ?? '0',
     document.getElementById('@alexshudrums')?.innerText ?? '0',
     document.getElementById('@justinjohnsonlive')?.innerText ?? '0',
-    document.getElementById('@MatteoMancusoofficial')?.innerText ?? '0',
     document.getElementById('@lunadimusic')?.innerText ?? '0'
   ]
 }
@@ -235,7 +208,6 @@ function inicializarBotones() {
     'telula': '@telula',
     'alexS': '@alexshudrums',
     'justinJ': '@justinjohnsonlive',
-    'mateoM': '@MatteoMancusoofficial',
     'lunaDi': '@lunadimusic'
   }
 

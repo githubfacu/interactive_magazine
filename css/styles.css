@@ -10,11 +10,17 @@ body{
 header{
     width: 100%;
     display: flex;
+    align-items: center;
     box-sizing: border-box;
     position: relative;
     background-color: rgba(102, 0, 0, .6);
-    padding: 8px 16px;
+    padding: 16px;
     color: rgb(223, 175, 1);
+}
+
+.brand{
+    font-size: 30px;
+    font-weight: 700;
 }
 
 header h6{
@@ -135,10 +141,11 @@ main{
     font-size: 30px;
     border: none;
     cursor: pointer;
+    transition: transform .07s ease;
 }
 
 .videos ul li button:hover{
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 @keyframes contadorStar{
@@ -187,14 +194,13 @@ main{
 /****************************** votos ******************************/
 
 .ranking{
+    height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    margin-bottom: 4%;
-    margin-right: 4%;
-    border-radius: 0px 10px;
     background-color: rgb(8, 0, 40);
     flex-direction: column;
-    align-items: center;
 }
 
 .ranking h2{
@@ -208,8 +214,8 @@ main{
     padding: 4px 12px 12px 12px;
     background-color: rgb(223, 175, 1);
     border-radius: 6px;
-    gap: 2px;
-    min-width: 190px;
+    gap: 6px;
+    min-width: 240px;
 }
 
 .ranking li{
@@ -223,32 +229,35 @@ main{
 }
 
 .ranking img{
-    max-width: 50px;
-    max-height: 50px;
-    border-radius: 30px 360px 360px 30px;
-    margin-bottom: -7.5%;
+    width: 100%;
+    height: 80px;
+    border-radius: 6px;
+    background-position: center;
+    background-size: contain;
 }
 
 .ranking a{
     color: #000000;
     align-self: center;
     text-decoration: underline;
-    padding-top: 10%;
 }
 
 .ranking h3{
-    align-self: flex-end;
     position: absolute;
-    bottom: -10px;
-    color: #000000;
-    font-size: xx-large;
+    right: 2px;
+    bottom: -8px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0px 2px;
+    border-radius: 4px;
+    font-size: 28px;
 }
 
 
 /****************************** clases ******************************/
 
 .tema-sitio{
-    background-color: #f6f6f6;
+    background-color: #ececec;
     color: #000000;
 }
 
@@ -265,13 +274,14 @@ main{
 footer{
     display: flex;
     box-sizing: border-box;
-    background-color: rgb(8, 0, 40);
-    margin-top: 0%;
+    background-color: #060606;
+    padding: 6px;
 }
 
-footer h6{
+footer span{
     margin: 0;
     padding-left: 8px;
     font-size: 13px;
     color: rgb(223, 175, 1);
+    font-weight: 700;
 }
