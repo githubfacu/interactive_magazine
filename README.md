@@ -15,7 +15,4 @@ After login, the user accesses a gallery-style interface displaying artist profi
 ## Tech Stack
 - HTML5  
 - CSS3  
-- JavaScript  
-
-## Purpose
-Portfolio project aimed at demonstrating front-end layout skills, responsive design, and visual composition.
+- JavaScript
