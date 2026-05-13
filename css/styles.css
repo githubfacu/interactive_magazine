@@ -145,7 +145,7 @@ main{
 }
 
 .videos ul li button:hover{
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 @keyframes contadorStar{
@@ -250,7 +250,7 @@ main{
     background-color: rgba(0, 0, 0, 0.7);
     padding: 0px 2px;
     border-radius: 4px;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 
